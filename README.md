@@ -18,8 +18,13 @@ cp agents/*.toml "$agents_root"/
 
 ## Update
 
-원본 clone이 업데이트되면 source clone root에서 다음 명령으로 이 Codex용 출력물을 다시 생성합니다.
+원본 clone이 업데이트되면 다음 명령으로 이 Codex용 출력물을 다시 생성합니다.
 
 ```bash
+git clone git@github.com:addyosmani/agent-skills.git
+cd agent-skills
+git clone git@github.com:rmekdma/agent-skills.git
 ./agent-skills/update-from-source.py
+cd agent-skills
+git add . && git commit -m "update" && git push origin main
 ```
